@@ -18,6 +18,54 @@ The database contains a simple `artists` table with the following structure:
 | `id` | INTEGER | Unique identifier for each artist (auto-incrementing primary key) |
 | `name` | TEXT | The artist's name |
 
+## Why No Songs?
+
+This database only contains artist names, not their songs. Here's why:
+
+- **Copyright concerns**: Song titles and lyrics are protected by copyright
+- **Database size**: Including songs would make the database much larger and harder to manage
+- **API availability**: Song data is better accessed through dedicated music APIs (see below)
+
+### Getting Songs for Artists
+
+If you need song information for an artist from this database, you can combine it with music APIs:
+
+**Recommended: Genius API**
+1. Get an artist from this database
+2. Use the [Genius API](https://docs.genius.com/) to search for their songs
+(Or alternatively, if you know the song, search for song name by artist from the database to ensure correct song is retreived)
+3. Requires a free Genius account and API key
+
+**Example workflow:**
+```python
+import sqlite3
+import requests
+
+# Get artist from our database
+conn = sqlite3.connect('artistDB.db')
+cursor = conn.cursor()
+cursor.execute("SELECT name FROM artists WHERE id = 12") # 12 is Coldplay from source. We could lookup by name if we wanted to, but id works too
+artist_name = cursor.fetchone()[0]
+
+# Use Genius API to get songs (requires API key)
+genius_url = f"https://api.genius.com/search?q={artist_name}"
+headers = {"Authorization": "Bearer YOUR_GENIUS_API_KEY"}
+response = requests.get(genius_url, headers=headers)
+songs = response.json()
+```
+
+**Other music APIs you can use:**
+- [Spotify Web API](https://developer.spotify.com/documentation/web-api/)
+- [Last.fm API](https://www.last.fm/api)
+- [MusicBrainz API](https://musicbrainz.org/doc/MusicBrainz_API)
+
+##### Please keep in mind of what each API is tailored towards:
+- Spotify Web API provides metadata, audio features, album art, and playback control. **No lyric content**
+- LastFM API provides metadata, scrobbling, charts, and artist/track info, **no lyric content**
+- MusicBrainz API provides metadata, artist, releases, recordings, identifiers, **no lyric content**
+- Genius API provides metadata, artist, song, album info, some lyric content.
+- Genius API usually provides a link to the lyrics due to licensing, so you'd need to scrape the page with something like [BS4](https://pypi.org/project/beautifulsoup4/) or use [LyricsGenius: a Python client for the Genius.com API](https://github.com/johnwmillr/LyricsGenius) by [John W. Miller](https://github.com/johnwmillr) and 28 contributors on Github
+
 ## How to Use
 
 ### Opening the Database
