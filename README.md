@@ -1,10 +1,11 @@
 # Music Artists Database
+##### V 1.0.0
 
 A simple SQLite database containing a collection of music artists, ready to use for your projects, applications, or personal needs.
 
 ## What's Included
 
-- **`artists.db`** - A SQLite database file with artist names
+- **`artistDB.db`** - A SQLite database file with artist names
 - Easy to integrate into any project that supports SQLite
 - Lightweight and portable format
 
@@ -21,7 +22,7 @@ The database contains a simple `artists` table with the following structure:
 
 ### Opening the Database
 You can open and view the database using:
-- **SQLite command line**: `sqlite3 artists.db`
+- **SQLite command line**: `sqlite3 artistDB.db`
 - **[DB Browser for SQLite](https://sqlitebrowser.org/)** (GUI application)
 - **[SQLite Viewer Web App](https://sqliteviewer.app/)** (Browser application)
 - **Any programming language with SQLite support** (Python, JavaScript, etc.)
@@ -52,7 +53,7 @@ SELECT COUNT(*) FROM artists;
 import sqlite3
 
 # Connect to the database
-conn = sqlite3.connect('artists.db')
+conn = sqlite3.connect('artistDB.db')
 cursor = conn.cursor()
 
 # Get a random artist
@@ -67,7 +68,7 @@ conn.close()
 ```javascript
 const sqlite3 = require('sqlite3').verbose();
 
-const db = new sqlite3.Database('artists.db');
+const db = new sqlite3.Database('artistDB.db');
 
 // Get all artists
 db.all("SELECT * FROM artists", (err, rows) => {
