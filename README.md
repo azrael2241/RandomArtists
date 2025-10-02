@@ -1,6 +1,6 @@
 # Music Artists Database
 ##### V 1.0.0
-
+##### 415 Total Artists as of 10/2/25
 A simple SQLite database containing a collection of music artists, ready to use for your projects, applications, or personal needs.
 
 ## What's Included
